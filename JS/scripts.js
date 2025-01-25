@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     // Configurar a API de clima
-    const apiKey = process.env.OPENWEATHER_API_KEY;
+    const apiKey = '3332e541016ef2b6b3a9602fea3cde6f';
     const city = 'Rio de Janeiro';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Configurar a API do GitHub para listar repositórios
     const githubUsername = 'Diogobitten'; 
     const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos`;
-    const githubApiKey = process.env.GITHUB_API_KEY;
+    const githubApiKey = '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';
 
     const projectsContainer = document.getElementById('projectsContainer');
 
