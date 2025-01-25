@@ -115,9 +115,14 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchCurrency();
 
     // Configurar a API do GitHub para listar repositórios
-    const githubUsername = 'Diogobitten'; 
-    const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos`;
-    const githubApiKey = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
+    fetch('/api/github')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data); // Dados retornados da API GitHub
+  })
+  .catch((error) => {
+    console.error('Erro ao chamar o proxy:', error);
+  });
 
     const projectsContainer = document.getElementById('projectsContainer');
 
