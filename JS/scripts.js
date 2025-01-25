@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Configurar a API do GitHub para listar repositórios
     const githubUsername = 'Diogobitten'; 
     const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos`;
-    const githubApiKey = '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';
+    const githubApiKey = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
 
     const projectsContainer = document.getElementById('projectsContainer');
 
