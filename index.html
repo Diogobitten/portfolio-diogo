@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfólio de Diogo - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex flex-col min-h-screen">
+        <div class="flex flex-1">
+
+           <!-- Include do sidebar -->
+            <div id="sidebarContainer"></div>
+
+            <!-- Main Content -->
+             
+            <div class="flex-1 p-6" id="mainContent">
+                
+                <div id="headerContainer"></div>
+
+                <section class="mb-6">
+                    <video autoplay loop muted playsinline class="w-full h-40 object-cover rounded-lg">
+                        <source src="./img/hello.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </section>
+
+                <section class="mt-12" id="mainProjects">
+                    <h3 class="text-2xl font-semibold mb-4">Meus Projetos</h3>
+                    <!-- Contêiner para os cards de projetos -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectT3">
+                        <!-- Os cards dos repositórios serão inseridos aqui dinamicamente pelo JavaScript -->
+                    </div>
+                    <div class="flex justify-end mt-6">
+                        <a href="projetos.html" class="btn-veja-mais text-white border-2 border-white px-6 py-2 rounded-lg font-semibold">
+                            Veja Mais
+                        </a>
+                    </div>
+                </section>
+
+                
+                <section class="mt-12" id="jogoPong">
+                    <h3 class="text-2xl font-semibold mb-4 text-white text-center">Jogue Pong Invaders</h3>
+                    <p class="mb-4 text-center"></p>
+                    <div class="bg-gray-900 p-2 rounded-lg flex justify-center">
+                        <iframe 
+                            src="https://editor.p5js.org/diogobitten/full/xCNjsYa9_" 
+                            style="border-radius:12px"
+                            width="600" 
+                            height="442" 
+                            frameborder="0" 
+                            allowfullscreen 
+                            title="Pong Invaders">
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="mt-12 mb-20" id="mainPodcast">
+                    <h3 class="text-2xl font-semibold mb-4">Podcast</h3>
+                    <p class="mb-4">Ouça meu podcast abaixo:</p>
+                    <div class="flex space-x-4">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/32YZwmC1KyYd6Crfc44veY?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </section>
+        
+             </div>  
+         </div> 
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 p-2 text-center rounded-tl-lg mt-4 self-end">
+            <p class="text-xs">&copy; 2025 Diogo Bittencourt. Todos os direitos reservados.</p>
+        </footer>
+    </div>  
+    <script src="./JS/scripts.js"></script>
+</body>
+</html>

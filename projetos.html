@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfólio de Diogo - Projetos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex flex-col min-h-screen">
+        <div class="flex flex-1">
+            <!-- Include do sidebar -->
+            <div id="sidebarContainer"></div>
+
+            <!-- Main Content -->
+             
+            <div class="flex-1 p-6" id="mainContent">
+                
+                <div id="headerContainer"></div>
+
+                <section>
+                    <h3 class="text-2xl font-semibold mb-4">Confira os Projetos</h3>
+                    <div id="projectsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Os cards de projetos serão carregados aqui -->
+                    </div>
+                   
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 p-2 text-center rounded-tl-lg mt-4 self-end">
+            <p class="text-xs">&copy; 2025 Diogo Bittencourt. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="./JS/scripts.js"></script>
+</body>
+</html>
