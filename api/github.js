@@ -1,11 +1,11 @@
 export default async function handler(req, res) {
   // Configure a URL para a API do GitHub
   const githubUsername = 'Diogobitten'; 
-  const GITHUB_API_URL = 'https://api.github.com/users/${githubUsername}/repos';
+  const GITHUB_API_URL = `https://api.github.com/users/${githubUsername}/repos`;
 
   // Headers para autenticação e outros
   const headers = {
-    Authorization: Bearer ${process.env.GITHUB_API_KEY}, // Use a variável de ambiente
+    Authorization: `Bearer ${process.env.GITHUB_API_KEY}`, // Use crase `
   };
 
   try {
