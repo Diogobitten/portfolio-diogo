@@ -11,12 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 const sidebarText = document.querySelectorAll('.sidebar-text');
                 const logoContainer = document.querySelector('.logo-container');
 
-                // Alternar classes de minimização e expansão
                 sidebar.classList.toggle('w-64'); // Expandido
                 sidebar.classList.toggle('w-20'); // Minimizado
                 sidebar.classList.toggle('sidebar-minimized');
 
-                // Esconder ou mostrar texto dos itens e a logo
                 sidebarText.forEach(text => text.classList.toggle('hidden'));
                 if (logoContainer) {
                     logoContainer.classList.toggle('hidden');
@@ -90,6 +88,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const vetado = ['Diogobitten', 'readme-jokes', 'snk', 'rafaballerini'];
     const top3 = ['pong-invaders', 'linkin-park-project', 'fintech-java-app'];
 
+    // Extrair URLs de imagens ou vídeos do README
+    function extractMediaLinks(owner, repo, readmeContent) {
+        const mediaRegex = /!\[.*?\]\((.*?)\)/g; // Regex para capturar links de mídia no README
+        const matches = [...readmeContent.matchAll(mediaRegex)];
+
+        return matches.map(match => {
+            const relativePath = match[1];
+            if (!relativePath.startsWith('http')) {
+                return `https://raw.githubusercontent.com/${owner}/${repo}/main/${relativePath}`;
+            }
+            return relativePath; // Retornar links absolutos
+        });
+    }
+
     // Função para buscar os repositórios utilizando o proxy `/api/github`
     async function fetchRepositories() {
         try {
@@ -104,13 +116,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     continue;
                 }
 
+                const readmeResponse = await fetch(`https://api.github.com/repos/${repo.owner.login}/${repo.name}/readme`);
+                if (!readmeResponse.ok) continue;
+                const readmeData = await readmeResponse.json();
+                const decodedReadme = atob(readmeData.content);
+                const mediaLinks = extractMediaLinks(repo.owner.login, repo.name, decodedReadme);
+
                 const projectCard = document.createElement('div');
                 projectCard.className = 'bg-gray-800 p-4 rounded-lg project-card cursor-pointer hover:shadow-lg';
                 projectCard.onclick = () => window.open(repo.html_url, '_blank');
 
                 projectCard.innerHTML = `
                     <div class="relative w-full h-48 mb-4">
-                        <img alt="Imagem do projeto ${repo.name}" class="w-full h-full object-cover rounded" src="https://raw.githubusercontent.com/${repo.owner.login}/${repo.name}/main/screenshot.png"/>
+                        ${
+                            mediaLinks.length > 0
+                                ? mediaLinks[0].endsWith('.mp4')
+                                    ? `<video class="w-full h-full object-cover rounded" controls>
+                                          <source src="${mediaLinks[0]}" type="video/mp4">
+                                          Seu navegador não suporta o vídeo.
+                                      </video>`
+                                    : `<img alt="Imagem do projeto ${repo.name}" class="w-full h-full object-cover rounded" src="${mediaLinks[0]}"/>`
+                                : '<div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-400">Sem mídia</div>'
+                        }
                     </div>
                     <h4 class="text-xl font-semibold mb-2">${repo.name}</h4>
                     <p>${repo.description || 'Sem descrição disponível'}</p>
@@ -134,13 +161,28 @@ document.addEventListener('DOMContentLoaded', function () {
             for (const repoName of top3) {
                 const repo = repos.find(r => r.name === repoName);
                 if (repo) {
+                    const readmeResponse = await fetch(`https://api.github.com/repos/${repo.owner.login}/${repo.name}/readme`);
+                    if (!readmeResponse.ok) continue;
+                    const readmeData = await readmeResponse.json();
+                    const decodedReadme = atob(readmeData.content);
+                    const mediaLinks = extractMediaLinks(repo.owner.login, repo.name, decodedReadme);
+
                     const projectCard = document.createElement('div');
                     projectCard.className = 'bg-gray-800 p-4 rounded-lg project-card cursor-pointer hover:shadow-lg';
                     projectCard.onclick = () => window.open(repo.html_url, '_blank');
 
                     projectCard.innerHTML = `
                         <div class="relative w-full h-48 mb-4">
-                            <img alt="Imagem do projeto ${repo.name}" class="w-full h-full object-cover rounded" src="https://raw.githubusercontent.com/${repo.owner.login}/${repo.name}/main/screenshot.png"/>
+                            ${
+                                mediaLinks.length > 0
+                                    ? mediaLinks[0].endsWith('.mp4')
+                                        ? `<video class="w-full h-full object-cover rounded" controls>
+                                              <source src="${mediaLinks[0]}" type="video/mp4">
+                                              Seu navegador não suporta o vídeo.
+                                          </video>`
+                                        : `<img alt="Imagem do projeto ${repo.name}" class="w-full h-full object-cover rounded" src="${mediaLinks[0]}"/>`
+                                    : '<div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-400">Sem mídia</div>'
+                            }
                         </div>
                         <h4 class="text-xl font-semibold mb-2">${repo.name}</h4>
                         <p>${repo.description || 'Sem descrição disponível'}</p>
