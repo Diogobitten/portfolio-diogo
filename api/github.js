@@ -1,4 +1,7 @@
 export default async function handler(req, res) {
+
+ res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate'); // Cache de 1 hora no Vercel
+  
  // Adicione os cabeçalhos CORS
  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite acesso de qualquer origem
  res.setHeader('Access-Control-Allow-Methods', 'GET'); // Permite apenas requisições GET
@@ -11,7 +14,7 @@ export default async function handler(req, res) {
 
   // Headers para autenticação e outros
   const headers = {
-    Authorization: `Bearer ${process.env.GITHUB_API_KEY}`, // Use crase `
+    Authorization: `Bearer ${process.env.GITHUB_API_KEY}`,
   };
 
   try {
