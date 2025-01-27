@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectT3 = document.getElementById('projectT3');
 
     // Lista de repositórios vetados
-    const vetado = ['Diogobitten', 'readme-jokes', 'snk', 'rafaballerini'];
+    const vetado = ['Diogobitten', 'readme-jokes', 'snk', 'rafaballerini', 'ABSphreak'];
     const top3 = ['pong-invaders', 'linkin-park-project', 'fintech-java-app'];
 
     // Extrair URLs de imagens ou vídeos do README
