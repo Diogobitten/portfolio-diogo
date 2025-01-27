@@ -12,68 +12,84 @@
 <body class="bg-gray-900 text-white">
     <div class="flex flex-col min-h-screen">
         <div class="flex flex-1">
-           <!-- Include do sidebar -->
-           <div id="sidebarContainer"></div>
+            <!-- Include do sidebar -->
+            <div id="sidebarContainer"></div>
 
             <!-- Main Content -->
-            <div class="flex-1 p-6" id="mainContent">
+            <div class="flex-1 p-4 md:p-6" id="mainContent">
 
                 <section>
-                    <div class="text-center pt-10 mx-20">
-                        <img alt="Imagem de perfil de Diogo, um desenvolvedor" class="rounded-full mx-auto mb-12" height="150" src="./img/perfil2.jpeg" width="150"/>
-                        <div class="flex items-center justify-center space-x-2 mb-2">
-                            <img alt="Logo de Diogo" class="w-8 h-9 mb-2 mx-2" src="./img/db.png"/>
-                            <p class="text-3xl font-bold">Diogo Bittencourt</p>
+                    <div class="text-center pt-6 md:pt-10 mx-4 md:mx-20">
+                        <img alt="Imagem de perfil de Diogo, um desenvolvedor" 
+                             class="rounded-full mx-auto mb-6 md:mb-12 w-32 md:w-40 h-32 md:h-40" 
+                             src="./img/perfil2.jpeg"/>
+
+                        <div class="flex flex-col items-center justify-center mb-2">
+                            <img alt="Logo de Diogo" class="w-6 md:w-8 h-7 md:h-9 mb-2" src="./img/db.png"/>
+                            <p class="text-xl md:text-3xl font-bold">Diogo Bittencourt</p>
                         </div>
-                        <p class="text-xs mb-5">IT Professional | Full-stack | Python | Graphic Designer | Marketing | Podcaster</p>
-                        
-                        <div class="flex items-center justify-center space-x-4 mb-20">
+
+                        <p class="text-sm md:text-xs lg:text-base mb-5">IT Professional | Full-stack | Python | Graphic Designer | Marketing | Podcaster</p>
+
+                        <div class="flex justify-center space-x-4 mb-20">
                             <!-- Botão para download do currículo -->
                             <a href="./docs/cv.pdf" 
                                download="Curriculo_Diogo_Bittencourt.pdf" 
-                               class="btn-veja-mais flex items-center text-white border-2 border-white px-2 py-1 rounded-md font-semibold text-sm space-x-2">
+                               class="btn-veja-mais flex items-center text-white border-2 border-white px-3 md:px-6 py-1 md:py-2 rounded-md font-semibold text-sm space-x-2">
                                 <span>Baixar CV</span>
                                 <i class="fas fa-download"></i>
                             </a>
                         </div>
-                        
 
-                        <p class="text-lg px-40 leading-loose mb-20">
-                            <strong>Sou estudante de Análise e Desenvolvimento de Sistemas</strong>, com foco em me tornar um <strong>Desenvolvedor Full Stack</strong>.
-                            Atualmente, estou estudando <strong>JavaScript, Java, Python e HTML/CSS</strong>, sempre buscando novas oportunidades para aprimorar minhas habilidades e trabalhar em projetos desafiadores.
-                            </br></br><strong>Com 10 anos de experiência em design</strong>, sou especializado em Design Gráfico, Web Design, UX/UI, Branding e Gestão de Projetos.
+                        <p class="text-lg md:text-base leading-loose mb-20 px-2 md:px-10 lg:px-40">
+                            <strong>Sou estudante de Análise e Desenvolvimento de Sistemas</strong>, com foco em me tornar um <strong>Desenvolvedor Full Stack</strong>. Atualmente, estou estudando <strong>JavaScript, Java, Python e HTML/CSS</strong>, sempre buscando novas oportunidades para aprimorar minhas habilidades e trabalhar em projetos desafiadores.
+                            <br><br>
+                            <strong>Com 10 anos de experiência em design</strong>, sou especializado em Design Gráfico, Web Design, UX/UI, Branding e Gestão de Projetos: 
                             <a href="https://diogobittenc.wixsite.com/diogob/projeto-3" 
-                            target="_blank"
-                            class="text-pink-700 hover:text-pink-800 underline font-medium">  
-                            </br></br>Confira os trabalhos de design aqui</br></br>  
-                            </a>
-                            Meu objetivo é criar <strong>soluções criativas e centradas no usuário</strong>, que atendam às necessidades dos clientes e proporcionem experiências incríveis. Sou <strong>colaborativo</strong>, <strong>comunicativo</strong> e estou constantemente me atualizando com as tendências do mercado e tecnologias emergentes.
-                            Empolgado e preparadopara encarar novos desafios que combinem tecnologia e criatividade!
+                               target="_blank"
+                               class="text-pink-700 hover:text-pink-800 underline font-medium">  
+                               Confira os trabalhos de design aqui  
+                            </a>.
+                            <br><br>
+                            Meu objetivo é criar <strong>soluções criativas e centradas no usuário</strong>, que atendam às necessidades dos clientes e proporcionem experiências incríveis. Sou <strong>colaborativo</strong>, <strong>comunicativo</strong> e estou constantemente me atualizando com as tendências do mercado e tecnologias emergentes. Empolgado e preparado para encarar novos desafios que combinem tecnologia e criatividade!
                         </p>
 
-                        <p class="text-xs leading-loose mb-2">
-                            Cursando:
-                        </p>
-                        <img alt="Imagem de perfil de Diogo, um desenvolvedor" class="rounded-full mx-auto mb-20" height="150" src="./img/fiap.png" width="150"/>
-
+                        <div class="flex items-center justify-center space-x-20 mb-20">
+                            <!-- Cursando FIAP -->
+                            <div class="flex flex-col items-center">
+                                <p class="text-gray-400 text-xs text-center mb-1">Cursando:</p>
+                                <img alt="Logo da FIAP" 
+                                     class="rounded-full w-24 h-auto" 
+                                     src="./img/fiap.png"/>
+                            </div>
                         
-                        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Um exemplo de GIF" class="w-full h-80 object-cover rounded-lg mb-8">
-
-                        <div class="flex justify-center space-x-4">
-                            <a class="text-gray-400 hover:text-white" href="https://github.com/Diogobitten" target="_blank">
-                                <i class="fab fa-github fa-2x"></i>
-                            </a>
-                            <a class="text-gray-400 hover:text-white" href="https://www.linkedin.com/in/diogo-bittencourt-de-oliveira/" target="_blank">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
+                            <!-- Contato com título e ícones -->
+                            <div class="flex flex-col items-center">
+                                <!-- Título "Contato" -->
+                                <p class="text-gray-400 text-xs text-center mb-2">Contato</p>
+                                <!-- Ícones -->
+                                <div class="flex space-x-3">
+                                    <a class="text-gray-400 hover:text-white" href="https://github.com/Diogobitten" target="_blank">
+                                        <i class="fab fa-github fa-2x"></i>
+                                    </a>
+                                    <a class="text-gray-400 hover:text-white" href="https://www.linkedin.com/in/diogo-bittencourt-de-oliveira/" target="_blank">
+                                        <i class="fab fa-linkedin fa-2x"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
+                        
+                        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" 
+                             alt="Um exemplo de GIF" 
+                             class="w-full h-40 md:h-80 object-cover rounded-lg mb-8">
+
                     </div>
                 </section>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="bg-gray-800 p-2 text-center rounded-tl-lg mt-4 self-end">
+         <!-- Footer -->
+         <footer class="bg-gray-800 p-2 text-center rounded-tl-lg mt-4 self-end">
             <p class="text-xs">&copy; 2025 Diogo Bittencourt. Todos os direitos reservados.</p>
         </footer>
     </div>
