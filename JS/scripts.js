@@ -1,19 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Carregar o conteúdo do sidebar.html no div do sidebarContainer
     fetch('sidebar.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('sidebarContainer').innerHTML = data;
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('sidebarContainer').innerHTML = data;
 
-        const toggleSidebar = document.getElementById('toggleSidebar');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarText = document.querySelectorAll('.sidebar-text');
-        const logoContainer = document.querySelector('.logo-container');
+            // Adicionar evento de alternância do sidebar após o carregamento
+            document.getElementById('toggleSidebar').addEventListener('click', function () {
+                const sidebar = document.getElementById('sidebar');
+                const sidebarText = document.querySelectorAll('.sidebar-text');
+                const logoContainer = document.querySelector('.logo-container');
 
-        // Adicionar evento de alternância do sidebar
-        toggleSidebar.addEventListener('click', function () {
-            if (window.innerWidth > 768) {
-                // Desktop: Expandir/minimizar
                 sidebar.classList.toggle('w-64'); // Expandido
                 sidebar.classList.toggle('w-20'); // Minimizado
                 sidebar.classList.toggle('sidebar-minimized');
@@ -22,44 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (logoContainer) {
                     logoContainer.classList.toggle('hidden');
                 }
-            } else {
-                // Mobile: Mostrar/ocultar barra inferior
-                sidebar.classList.toggle('hidden');
-            }
+            });
+        })
+        .catch(error => {
+            console.error('Erro ao carregar o sidebar:', error);
         });
-
-        // Ajustar a sidebar ao carregar a página
-        function adjustSidebarForMobile() {
-            if (window.innerWidth <= 768) {
-                // Mobile: Ajustar para barra inferior
-                sidebar.classList.add('fixed', 'bottom-0', 'w-full', 'h-auto', 'flex', 'justify-around', 'items-center', 'p-2');
-                sidebar.classList.remove('w-64', 'h-full');
-                sidebarText.forEach(text => text.classList.add('hidden')); // Esconde texto no mobile
-                if (logoContainer) {
-                    logoContainer.classList.add('hidden'); // Esconde logo no mobile
-                }
-            } else {
-                // Desktop: Ajustar para barra lateral
-                sidebar.classList.remove('fixed', 'bottom-0', 'w-full', 'h-auto', 'flex', 'justify-around', 'items-center', 'p-2');
-                sidebar.classList.add('w-64', 'h-full');
-                sidebarText.forEach(text => text.classList.remove('hidden')); // Mostra texto no desktop
-                if (logoContainer) {
-                    logoContainer.classList.remove('hidden'); // Mostra logo no desktop
-                }
-            }
-        }
-
-        // Executar ajuste no carregamento
-        adjustSidebarForMobile();
-
-        // Ajustar ao redimensionar a janela
-        window.addEventListener('resize', adjustSidebarForMobile);
-    })
-    .catch(error => {
-        console.error('Erro ao carregar o sidebar:', error);
-    });
-
-
 
     // Configurar a API de clima
     function fetchWeather() {
