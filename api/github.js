@@ -1,4 +1,10 @@
 export default async function handler(req, res) {
+ // Adicione os cabeçalhos CORS
+ res.setHeader('Access-Control-Allow-Origin', '*'); // Permite acesso de qualquer origem
+ res.setHeader('Access-Control-Allow-Methods', 'GET'); // Permite apenas requisições GET
+ res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+
   // Configure a URL para a API do GitHub
   const githubUsername = 'Diogobitten'; 
   const GITHUB_API_URL = `https://api.github.com/users/${githubUsername}/repos`;
