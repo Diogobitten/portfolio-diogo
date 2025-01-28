@@ -10,9 +10,9 @@ Este é o projeto do meu portfólio pessoal, onde apresento meus principais trab
 
 - **Sidebar Dinâmica**: Sidebar responsiva que se expande ou minimiza com efeito suave.
 - **Consulta de APIs**:
+- **Repositórios do GitHub**: Utiliza a API do GitHub para listar os meus principais repositórios, exibindo imagens ou vídeos presentes nos README dos projetos.
   - **Clima**: Consulta a API do OpenWeather para mostrar a temperatura atual do Rio de Janeiro.
   - **Cotação de Moedas**: Consulta a API da AwesomeAPI para exibir a cotação atual do USD e EUR em relação ao Real (BRL).
-  - **Repositórios do GitHub**: Utiliza a API do GitHub para listar os meus principais repositórios, exibindo imagens ou vídeos presentes nos README dos projetos.
 
 ## Tecnologias Utilizadas
 
