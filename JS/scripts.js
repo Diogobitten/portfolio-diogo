@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'Quais são suas principais habilidades técnicas?': `
         Minhas principais habilidades incluem:
         <ul class="list-disc pl-5 space-y-2">
-          <li><strong>Front-end:</strong> HTML, CSS, JavaScript, React, Bootstrap.</li>
+          <li><strong>Front-end:</strong> HTML, CSS, JavaScript, React, Bootstrap, Tailwind and GSAP.</li>
           <li><strong>Back-end:</strong> Python, Java, Banco de Dados Oracle.</li>
           <li><strong>Outros:</strong> AWS, UX/UI Design, conhecimentos avançados em Design Gráfico.</li>
         </ul>
