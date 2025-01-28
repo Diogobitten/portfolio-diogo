@@ -91,12 +91,28 @@ document.addEventListener('DOMContentLoaded', function () {
                    Olá! Que bom te ver por aqui. 😊<br>
                    O que você gostaria de saber sobre o Diogo? Posso te falar sobre formação, habilidades, projetos ou algo mais!
                `,
+               ola: `
+                   Olá! Que bom te ver por aqui. 😊<br>
+                   O que você gostaria de saber sobre o Diogo? Posso te falar sobre formação, habilidades, projetos ou algo mais!
+               `,
                tchau: `
                    Espero ter ajudado! 🚀<br>
                    Foi ótimo falar com você. Até a próxima e lembre-se: o Diogo pode ser um grande trunfo para sua equipe! 😄
                `,
                obrigado: `
                    De nada! 😄<br>
+                   Se precisar de mais alguma coisa, é só chamar. Sempre um prazer ajudar!
+               `,
+               obrigada: `
+                   De nada! 😄<br>
+                   Se precisar de mais alguma coisa, é só chamar. Sempre um prazer ajudar!
+               `,
+               valeu: `
+                   TMJ 😄<br>
+                   Se precisar de mais alguma coisa, é só chamar. Sempre um prazer ajudar!
+               `,
+               vlw: `
+                   TMJ 😄<br>
                    Se precisar de mais alguma coisa, é só chamar. Sempre um prazer ajudar!
                `,
                'sobre o diogo': `
@@ -113,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
                `,
                curriculo: `
                <strong>Baixe meu currículo com um clique! 🚀</strong><br>
-               <a href="./docs/cv.pdf" target="_blank" class="text-white underline">Clique aqui para baixar meu currículo</a> 
+               <a href="./docs/cv_diogo_bittencourt_dev_brasil.pdf" target="_blank" class="text-white underline">Clique aqui para baixar meu currículo</a> 
                `
            };
        
