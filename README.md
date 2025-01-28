@@ -20,6 +20,7 @@ Este é o projeto do meu portfólio pessoal, onde apresento meus principais trab
 - **CSS3** (com TailwindCSS)
 - **JavaScript**
 - **Font Awesome** (para ícones)
+- **Chatbot**
 - **APIs Externas**: OpenWeather, AwesomeAPI, GitHub API
 
 ## Como Esconder a Chave de API
