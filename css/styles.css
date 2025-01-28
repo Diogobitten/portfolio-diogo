@@ -1,41 +1,47 @@
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        .project-card {
-            position: relative; 
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(255,0,0,0.5), rgba(255,154,0,0.5), rgba(208,222,33,0.5), rgba(79,220,74,0.5), rgba(63,218,216,0.5), rgba(47,201,226,0.5), rgba(28,127,238,0.5), rgba(95,21,242,0.5), rgba(186,12,248,0.5), rgba(251,7,217,0.5), rgba(255,0,0,0.5));
-            background-size: 200% 200%;
-            z-index: 0;
-            transition: opacity 0.3s;
-            opacity: 0;
-        }
-        .project-card:hover::before {
-            opacity: 1;
-            animation: gradient-animation 3s ease infinite;
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
-        .project-card-content {
-            position: relative;
-            z-index: 1;
-        }
+/* Estilização dos cards de projeto */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
 
-        .tracking-in-expand {
-            -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-                    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-        }
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,0,0,0.5), rgba(255,154,0,0.5), rgba(208,222,33,0.5), rgba(79,220,74,0.5), rgba(63,218,216,0.5), rgba(47,201,226,0.5), rgba(28,127,238,0.5), rgba(95,21,242,0.5), rgba(186,12,248,0.5), rgba(251,7,217,0.5), rgba(255,0,0,0.5));
+    background-size: 200% 200%;
+    z-index: 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    animation: gradient-animation 3s ease infinite;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 /* Posiciona o logo no canto superior esquerdo */
 .logo-container {
@@ -47,8 +53,8 @@
 }
 
 .logo {
-    width: 34px; /* Ajuste conforme necessário */
-    height: 37px; /* Ajuste conforme necessário */
+    width: 34px;
+    height: 37px;
 }
 
 /* Esconde o logo quando a sidebar é minimizada */
@@ -57,7 +63,6 @@
     pointer-events: none;
 }
 
-
 /* Botão padrão */
 .btn-veja-mais {
     position: relative;
@@ -65,7 +70,6 @@
     transition: transform 0.3s, background 0.3s;
 }
 
-/* Deixa o botão vazio inicialmente */
 .btn-veja-mais::before {
     content: '';
     position: absolute;
@@ -80,7 +84,6 @@
     transition: opacity 0.3s, transform 0.3s;
 }
 
-/* Zoom e preenchimento no hover */
 .btn-veja-mais:hover::before {
     opacity: 1;
     transform: scale(1.2);
@@ -88,7 +91,7 @@
 }
 
 .btn-veja-mais:hover {
-    transform: scale(1.05); /* Pequeno zoom no botão */
+    transform: scale(1.05);
 }
 
 .btn-veja-mais {
@@ -96,9 +99,19 @@
     z-index: 1;
 }
 
-@keyframes gradient-animation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
+.faq-button {
+    background-color: #1d4ed8;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    text-align: end;
+  }
+  
+  .faq-button:hover {
+    background-color: #2563eb;
+  }
+  
