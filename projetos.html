@@ -68,6 +68,60 @@
                         <!-- Os cards de projetos serão carregados aqui -->
                     </div>
                 </section>
+
+                <!-- Botão e janela do chatbot -->
+                <div id="chatbotContainer" class="fixed bottom-10 right-4 flex flex-col items-end z-50">
+                    <!-- Balãozinho inicial -->
+                    <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2">
+                      Olá! Veja por que você deve contratar o Diogo 😄
+                    </div>
+                  
+                    <!-- Janela do chatbot -->
+                    <div id="chatWindow" class="hidden bg-gray-800 p-4 rounded-lg shadow-lg w-80 h-auto flex flex-col">
+                      <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
+                        <h2 class="text-lg font-semibold text-white">Chatbot - FAQ</h2>
+                        <button id="closeChat" class="text-gray-400 hover:text-red-500">&times;</button>
+                      </div>
+                      <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 p-2 bg-gray-700 rounded-lg">
+                        <!-- Mensagem inicial fixa -->
+                        <div id="welcomeMessage" class="text-sm text-white bg-gray-600 p-2 rounded-lg">
+                          Olá! Sou o chatbot do Diogo. Posso ajudar com algumas perguntas frequentes 👇
+                        </div>
+                  
+                        <!-- Perguntas do FAQ -->
+                        <div id="faqButtons" class="flex flex-col gap-2">
+                          <!-- Perguntas iniciais -->
+                          <button class="faq-button text-right">Qual é a sua formação acadêmica?</button>
+                          <button class="faq-button text-right">Quais projetos você já desenvolveu?</button>
+                          <button class="faq-button text-right">Quais são suas principais habilidades técnicas?</button>
+                  
+                          <!-- Botão para exibir mais perguntas -->
+                          <button id="showMore" class="text-white hover:text-gray-400 text-sm self-end">Veja mais</button>
+                  
+                          <!-- Perguntas extras (escondidas inicialmente) -->
+                          <div id="extraQuestions" class="hidden flex flex-col gap-2">
+                            <button class="faq-button text-right">Qual foi a sua experiência mais recente?</button>
+                            <button class="faq-button text-right">Como você combina design e tecnologia?</button>
+                            <button class="faq-button text-right">Qual é o seu objetivo profissional atual?</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                  
+                      <!-- Botão para baixar o currículo -->
+                      <div class="mt-4 flex justify-center">
+                        <a id="downloadResume" href="./docs/cv_diogo_bittencourt_dev_brasil.pdf" download class="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700">
+                          Baixar Currículo
+                        </a>
+                      </div>
+                    </div>
+                  
+                    <!-- Ícone do chatbot -->
+                    <button id="chatbotButton" class="bg-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700">
+                      <i class="fas fa-robot text-white text-xl"></i>
+                    </button>
+                  </div>
             </div>
         </div>
 
