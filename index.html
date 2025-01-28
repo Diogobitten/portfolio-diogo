@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/db.png">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body class="bg-gray-900 text-white">
@@ -18,14 +18,13 @@
             <div id="sidebarContainer"></div>
 
             <!-- Main Content -->
-             
-            <div class="flex-1 p-6" id="mainContent">
+            <div class="flex-1 p-4 md:p-6" id="mainContent">
                 
-                <header class="flex items-center justify-between mb-6">
+                <header class="flex flex-wrap items-center justify-between mb-6">
                     <div class="flex items-center space-x-3">
-                        <h2 class="text-xl font-bold" id="mainHeader">Diogo Bittencourt</h2>
+                        <h2 class="text-lg md:text-xl font-bold" id="mainHeader">Diogo Bittencourt</h2>
                         <!-- Botão para download do currículo -->
-                        <a href="./docs/cv.pdf" 
+                        <a href="./docs/cv_diogo_bittencourt_dev_brasil.pdf" 
                            download="Curriculo_Diogo_Bittencourt.pdf" 
                            class="btn-veja-mais flex items-center text-white border-2 border-white px-2 py-1 rounded-md font-semibold text-sm space-x-2">
                             <span>Baixar CV</span>
@@ -33,23 +32,22 @@
                         </a>
                     </div>
                 
-                    <div class="flex items-center">
-                
+                    <div class="flex items-center space-x-4">
                         <!-- Clima -->
                         <div id="weather" class="flex flex-col items-end text-end">
                             <div class="flex items-center">
-                            <img id="weatherIcon" alt="Ícone do clima" class="w-8 h-8 hidden ">
-                            <span id="location" class="text-sm text-gray-400 mt-2 leading-none">Rio</span> <!-- Nome da cidade em cima -->
+                                <img id="weatherIcon" alt="Ícone do clima" class="w-8 h-8 hidden">
+                                <span id="location" class="text-sm text-gray-400 mt-2 leading-none hidden">Rio</span>
                             </div>
                             <div class="flex items-center mb-3">
                                 <span id="temperature" class="text-lg hidden"></span>
                             </div>
                         </div>
-                
+
                         <!-- Moeda -->
-                        <div id="currency" class="flex flex-col text-sm text-gray-400 mx-4">
+                        <div id="currency" class="flex flex-col text-sm text-gray-400">
                             <div id="usd" class="flex items-center hidden">
-                                <i id="usdIcon" class="ml-3 hidden"></i>
+                                <i id="usdIcon" class="ml-2 hidden"></i>
                                 <span class="mr-2">USD:</span>
                                 <span id="usdValue"></span>
                             </div>
@@ -59,35 +57,38 @@
                                 <span id="eurValue"></span>
                             </div>
                         </div>
-                        
-                        <!-- Foto de perfil -->
-                        <img alt="Imagem de perfil de Diogo, um desenvolvedor" class="profile-pic rounded-full" height="50" src="./img/perfil.jpeg" width="50"/>
+
+                        <!-- Imagem de perfil com link -->
+                        <a href="sobre-mim.html">
+                            <img alt="Imagem de perfil de Diogo, um desenvolvedor" 
+                                 class="w-12 h-12 rounded-full hover:shadow-lg" 
+                                 src="./img/perfil.jpeg"/>
+                        </a>
                     </div>
-                    
                 </header>
 
                 <section class="mb-6">
-                    <video autoplay loop muted playsinline class="w-full h-40 object-cover rounded-lg">
+                    <video autoplay loop muted playsinline class="w-full h-48 sm: h-96 md: h-60 lg:h-72 object-cover rounded-lg">
                         <source src="./img/hello.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>
                 </section>
+                
 
                 <section class="mt-12" id="mainProjects">
-                    <h3 class="text-2xl font-semibold mb-4">Meus Projetos</h3>
+                    <h3 class="text-lg md:text-2xl font-semibold mb-4">Meus Projetos</h3>
                     <!-- Contêiner para os cards de projetos -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectT3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="projectT3">
                         <!-- Os cards dos repositórios serão inseridos aqui dinamicamente pelo JavaScript -->
                     </div>
                     <div class="flex justify-end mt-6">
-                        <a href="projetos.html" class="btn-veja-mais text-white border-2 border-white px-6 py-2 rounded-lg font-semibold">
+                        <a href="projetos.html" class="btn-veja-mais text-white border-2 border-white px-4 md:px-6 py-2 rounded-lg font-semibold text-sm md:text-base">
                             Veja Mais
                         </a>
                     </div>
                 </section>
 
-                
-                <section class="mt-12" id="jogoPong">
+                <section class="mt-12 hidden md:block" id="jogoPong">
                     <h3 class="text-2xl font-semibold mb-4 text-white text-center">Jogue Pong Invaders</h3>
                     <p class="mb-4 text-center"></p>
                     <div class="bg-gray-900 p-2 rounded-lg flex justify-center">
@@ -102,22 +103,65 @@
                         </iframe>
                     </div>
                 </section>
+                
 
-                <section class="mt-12 mb-20" id="mainPodcast">
-                    <h3 class="text-2xl font-semibold mb-4">Podcast</h3>
-                    <p class="mb-4">Ouça meu podcast abaixo:</p>
+                <section class="mt-12 mb-10" id="mainPodcast">
+                    <h3 class="text-lg md:text-2xl font-semibold mb-4">Podcast</h3>
+                    <p class="mb-4 text-sm md:text-base">Ouça meu podcast abaixo:</p>
                     <div class="flex space-x-4">
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/32YZwmC1KyYd6Crfc44veY?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                 </section>
+
+                <section>
+                    <!-- Contato com título e ícones -->
+                    <div class="flex flex-col items-center">
+                        <!-- Título "Contato" -->
+                        <p class="text-gray-400 text-xs text-center mb-2">Contato</p>
+                        <!-- Ícones -->
+                        <div class="flex space-x-3">
+                            <a class="text-gray-400 hover:text-white" href="https://github.com/Diogobitten" target="_blank">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a class="text-gray-400 hover:text-white" href="https://www.linkedin.com/in/diogo-bittencourt-de-oliveira/" target="_blank">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Botão e janela do chatbot -->
+                <div id="chatbotContainer" class="fixed bottom-10 right-4 flex flex-col items-end z-50">
+                    <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2">
+                        Olá! Veja por que você deve contratar o Diogo 😄
+                    </div>
+                    <div id="chatWindow" class="hidden bg-gray-800 p-4 rounded-lg shadow-lg w-80 h-auto flex flex-col">
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
+                            <h2 class="text-lg font-semibold text-white">Chatbot do Diogo</h2>
+                            <button id="closeChat" class="text-gray-400 hover:text-red-500">&times;</button>
+                        </div>
+                        <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 p-2 bg-gray-700 rounded-lg" style="max-height: 300px;">
+                            <!-- As mensagens serão adicionadas aqui dinamicamente -->
+                        </div>
+                        <div class="flex items-center space-x-2 mt-2">
+                            <input id="chatInput" type="text" placeholder="Digite sua pergunta..." class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg outline-none">
+                            <button id="sendButton" class="bg-blue-600 px-4 py-2 rounded-lg text-white">Enviar</button>
+                        </div>
+                    </div>
+                    <button id="chatbotButton" class="bg-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700">
+                        <i class="fas fa-robot text-white text-xl"></i>
+                    </button>
+                </div>
+                  
+  
         
              </div>  
          </div> 
 
-        <!-- Footer -->
-        <footer class="bg-gray-800 p-2 text-center rounded-tl-lg mt-4 self-end">
-            <p class="text-xs">&copy; 2025 Diogo Bittencourt. Todos os direitos reservados.</p>
-        </footer>
+                  <!-- Footer -->
+                  <footer class="bg-gray-800 p-2 text-center rounded-tl-lg mt-4 self-end">
+                    <p class="text-xs">&copy; 2025 Diogo Bittencourt. Todos os direitos reservados.</p>
+                </footer>
     </div>  
     <script src="./JS/scripts.js"></script>
 </body>
