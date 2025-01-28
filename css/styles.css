@@ -1,6 +1,16 @@
-body {
-    font-family: 'Roboto', sans-serif;
-}
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: black;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #2c2c2c;
+    border-radius: 20px; 
+    /* roundness of the scroll thumb */
+  }
 
 /* Estilização dos cards de projeto */
 .project-card {
@@ -100,13 +110,12 @@ body {
 }
 
 .faq-button {
-    background-color: #1d4ed8;
+    border-color: #2563eb;
     color: white;
     padding: 8px 16px;
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
-    border: none;
     transition: background-color 0.3s;
     text-align: end;
   }
@@ -114,4 +123,26 @@ body {
   .faq-button:hover {
     background-color: #2563eb;
   }
+
+  #chatMessages {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin; /* Para navegadores Firefox */
+    scrollbar-color: #4B5563 #1F2937; /* Cor da barra e do fundo */
+}
+
+/* Para navegadores baseados no WebKit (Chrome, Edge, Safari) */
+#chatMessages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb {
+    background-color: #4B5563; /* Cor da barra */
+    border-radius: 4px;
+}
+
+#chatMessages::-webkit-scrollbar-track {
+    background-color: #1F2937; /* Cor do fundo da barra */
+}
+
   
