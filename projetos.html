@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <link rel="icon" type="image/x-icon" href="./img/db.png">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body class="bg-gray-900 text-white">
@@ -23,9 +22,9 @@
                     <div class="flex items-center space-x-2 md:space-x-3">
                         <h2 class="text-lg md:text-xl font-bold" id="mainHeader">Diogo Bittencourt</h2>
                         <!-- Botão para download do currículo -->
-                        <a href="./docs/cv_diogo_bittencourt_dev_brasil.pdf" 
+                        <a href="./docs/cv.pdf" 
                            download="Curriculo_Diogo_Bittencourt.pdf" 
-                           class="btn-veja-mais flex items-center text-white border-2 border-white px-2 py-1 rounded-md font-semibold text-sm space-x-2">
+                           class="btn-veja-mais flex items-center text-white border-2 border-white px-2 py-1 rounded-md font-semibold text-sm space-x-2" data-translate>
                             <span>Baixar CV</span>
                             <i class="fas fa-download"></i>
                         </a>
@@ -64,34 +63,35 @@
                 </header>
 
                 <section>
-                    <h3 class="text-lg md:text-2xl font-semibold mb-4">Confira os Projetos</h3>
+                    <h3 class="text-lg md:text-2xl font-semibold mb-4" data-translate>Confira os Projetos</h3>
                     <div id="projectsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         <!-- Os cards de projetos serão carregados aqui -->
                     </div>
                 </section>
 
-                <!-- Botão e janela do chatbot -->
-                <div id="chatbotContainer" class="fixed bottom-10 right-4 flex flex-col items-end z-50">
-                    <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2">
-                        Olá! Veja por que você deve contratar o Diogo 😄
-                    </div>
-                    <div id="chatWindow" class="hidden bg-gray-800 p-4 rounded-lg shadow-lg w-80 h-auto flex flex-col">
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
-                            <h2 class="text-lg font-semibold text-white">Chatbot do Diogo</h2>
-                            <button id="closeChat" class="text-gray-400 hover:text-red-500">&times;</button>
-                        </div>
-                        <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 p-2 bg-gray-700 rounded-lg" style="max-height: 300px;">
-                            <!-- As mensagens serão adicionadas aqui dinamicamente -->
-                        </div>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <input id="chatInput" type="text" placeholder="Digite sua pergunta..." class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg outline-none">
-                            <button id="sendButton" class="bg-blue-600 px-4 py-2 rounded-lg text-white">Enviar</button>
-                        </div>
-                    </div>
-                    <button id="chatbotButton" class="bg-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700">
-                        <i class="fas fa-robot text-white text-xl"></i>
-                    </button>
+               <!-- Botão e janela do chatbot -->
+               <div id="chatbotContainer" class="fixed bottom-10 right-4 flex flex-col items-end z-50">
+                <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2">
+                    Olá! Veja por que você deve contratar o Diogo 😄
                 </div>
+                <div id="chatWindow" class="hidden bg-gray-800 p-4 rounded-lg shadow-lg w-80 h-auto flex flex-col">
+                    <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
+                        <h2 class="text-lg font-semibold text-white">Chatbot do Diogo</h2>
+                        <button id="closeChat" class="text-gray-400 hover:text-red-500">&times;</button>
+                    </div>
+                    <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 p-2 bg-gray-700 rounded-lg" style="max-height: 300px;">
+                        <!-- As mensagens serão adicionadas aqui dinamicamente -->
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2">
+                        <input id="chatInput" type="text" placeholder="Digite sua pergunta..." class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg outline-none">
+                        <button id="sendButton" class="bg-blue-600 px-4 py-2 rounded-lg text-white">Enviar</button>
+                    </div>
+                </div>
+                <button id="chatbotButton" class="bg-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700">
+                    <i class="fas fa-robot text-white text-xl"></i>
+                </button>
+            </div>
+
 
             </div>
         </div>

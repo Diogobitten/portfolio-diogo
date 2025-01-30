@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <link rel="icon" type="image/x-icon" href="./img/db.png">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body class="bg-gray-900 text-white">
@@ -36,29 +35,29 @@
                             <!-- Botão para download do currículo -->
                             <a href="./docs/cv_diogo_bittencourt_dev_brasil.pdf" 
                                download="Curriculo_Diogo_Bittencourt.pdf" 
-                               class="btn-veja-mais flex items-center text-white border-2 border-white px-3 md:px-6 py-1 md:py-2 rounded-md font-semibold text-sm space-x-2">
+                               class="btn-veja-mais flex items-center text-white border-2 border-white px-3 md:px-6 py-1 md:py-2 rounded-md font-semibold text-sm space-x-2" data-translate>
                                 <span>Baixar CV</span>
                                 <i class="fas fa-download"></i>
                             </a>
                         </div>
 
                         <p class="text-lg md:text-base leading-loose mb-20 px-2 md:px-10 lg:px-40">
-                            <strong>Sou estudante de Análise e Desenvolvimento de Sistemas</strong>, com foco em me tornar um <strong>Desenvolvedor Full Stack</strong>. Atualmente, estou estudando <strong>JavaScript, Java, Python e HTML/CSS</strong>, sempre buscando novas oportunidades para aprimorar minhas habilidades e trabalhar em projetos desafiadores.
+                            <p data-translate><strong>Sou estudante de Análise e Desenvolvimento de Sistemas</strong>, com foco em me tornar um <strong>Desenvolvedor Full Stack</strong>. Atualmente, estou estudando <strong>JavaScript, Java, Python e HTML/CSS</strong>, sempre buscando novas oportunidades para aprimorar minhas habilidades e trabalhar em projetos desafiadores.
                             <br><br>
-                            <strong>Com 10 anos de experiência em design</strong>, sou especializado em Design Gráfico, Web Design, UX/UI, Branding e Gestão de Projetos: 
+                            <strong>Com 10 anos de experiência em design</strong>, sou especializado em Design Gráfico, Web Design, UX/UI, Branding e Gestão de Projetos:</p> 
                             <a href="https://diogobittenc.wixsite.com/diogob/projeto-3" 
                                target="_blank"
-                               class="text-pink-700 hover:text-pink-800 underline font-medium">  
+                               class="text-pink-700 hover:text-pink-800 underline font-medium" data-translate>  
                                Confira os trabalhos de design aqui  
                             </a>.
-                            <br><br>
+                            <br><br><p data-translate>
                             Meu objetivo é criar <strong>soluções criativas e centradas no usuário</strong>, que atendam às necessidades dos clientes e proporcionem experiências incríveis. Sou <strong>colaborativo</strong>, <strong>comunicativo</strong> e estou constantemente me atualizando com as tendências do mercado e tecnologias emergentes. Empolgado e preparado para encarar novos desafios que combinem tecnologia e criatividade!
-                        </p>
+                        </p></p>
 
-                        <div class="flex items-center justify-center space-x-20 mb-20">
+                        <div class="flex items-center justify-center space-x-20 mb-20 mt-20">
                             <!-- Cursando FIAP -->
                             <div class="flex flex-col items-center">
-                                <p class="text-gray-400 text-xs text-center mb-1">Cursando:</p>
+                                <p class="text-gray-400 text-xs text-center mb-1" data-translate>Cursando:</p>
                                 <img alt="Logo da FIAP" 
                                      class="rounded-full w-24 h-auto" 
                                      src="./img/fiap.png"/>
@@ -67,7 +66,7 @@
                             <!-- Contato com título e ícones -->
                             <div class="flex flex-col items-center">
                                 <!-- Título "Contato" -->
-                                <p class="text-gray-400 text-xs text-center mb-2">Contato</p>
+                                <p class="text-gray-400 text-xs text-center mb-2" data-translate>Contato</p>
                                 <!-- Ícones -->
                                 <div class="flex space-x-3">
                                     <a class="text-gray-400 hover:text-white" href="https://github.com/Diogobitten" target="_blank">
@@ -87,28 +86,28 @@
                     </div>
                 </section>
 
-                <!-- Botão e janela do chatbot -->
                 <div id="chatbotContainer" class="fixed bottom-10 right-4 flex flex-col items-end z-50">
-                    <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2">
-                        Olá! Veja por que você deve contratar o Diogo 😄
-                    </div>
-                    <div id="chatWindow" class="hidden bg-gray-800 p-4 rounded-lg shadow-lg w-80 h-auto flex flex-col">
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
-                            <h2 class="text-lg font-semibold text-white">Chatbot do Diogo</h2>
-                            <button id="closeChat" class="text-gray-400 hover:text-red-500">&times;</button>
-                        </div>
-                        <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 p-2 bg-gray-700 rounded-lg" style="max-height: 300px;">
-                            <!-- As mensagens serão adicionadas aqui dinamicamente -->
-                        </div>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <input id="chatInput" type="text" placeholder="Digite sua pergunta..." class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg outline-none">
-                            <button id="sendButton" class="bg-blue-600 px-4 py-2 rounded-lg text-white">Enviar</button>
-                        </div>
-                    </div>
-                    <button id="chatbotButton" class="bg-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700">
-                        <i class="fas fa-robot text-white text-xl"></i>
-                    </button>
-                </div>
+                  <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2" data-translate>
+                      Olá! Veja por que você deve contratar o Diogo 😄
+                  </div>
+                  <div id="chatWindow" class="hidden bg-gray-800 p-4 rounded-lg shadow-lg w-80 h-auto flex flex-col">
+                      <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
+                          <h2 class="text-lg font-semibold text-white" data-translate>Chatbot do Diogo</h2>
+                          <button id="closeChat" class="text-gray-400 hover:text-red-500">&times;</button>
+                      </div>
+                      <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 p-2 bg-gray-700 rounded-lg" style="max-height: 300px;">
+                          <!-- As mensagens serão adicionadas aqui dinamicamente -->
+                      </div>
+                      <div class="flex items-center space-x-2 mt-2">
+                          <input id="chatInput" type="text" placeholder="Digite sua pergunta..." class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg outline-none">
+                          <button id="sendButton" class="bg-blue-600 px-4 py-2 rounded-lg text-white" data-translate>Enviar</button>
+                      </div>
+                  </div>
+                  <button id="chatbotButton" class="bg-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700">
+                      <i class="fas fa-robot text-white text-xl"></i>
+                  </button>
+              </div>
+
 
 
             </div>
@@ -116,7 +115,7 @@
 
          <!-- Footer -->
          <footer class="bg-gray-800 p-2 text-center rounded-tl-lg mt-4 self-end">
-            <p class="text-xs">&copy; 2025 Diogo Bittencourt. Todos os direitos reservados.</p>
+            <p class="text-xs" data-translate>&copy; 2025 Diogo Bittencourt. Todos os direitos reservados.</p>
         </footer>
     </div>
     <script src="./JS/scripts.js"></script>

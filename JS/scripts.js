@@ -1,36 +1,136 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Carregar o conteúdo do sidebar.html no div do sidebarContainer
-     fetch('sidebar.html')
-         .then(response => response.text())
-         .then(data => {
-             document.getElementById('sidebarContainer').innerHTML = data;
- 
-             // Inicia o sidebar minimizado
-             const sidebar = document.getElementById('sidebar');
-             const sidebarText = document.querySelectorAll('.sidebar-text');
-             const logoContainer = document.querySelector('.logo-container');
- 
-             sidebar.classList.add('w-20', 'sidebar-minimized');
-             sidebarText.forEach(text => text.classList.add('hidden'));
-             if (logoContainer) {
-                 logoContainer.classList.add('hidden');
-             }
- 
-             // Adicionar evento de alternância do sidebar
-             document.getElementById('toggleSidebar').addEventListener('click', function () {
-                 sidebar.classList.toggle('w-64'); // Expandido
-                 sidebar.classList.toggle('w-20'); // Minimizado
-                 sidebar.classList.toggle('sidebar-minimized');
- 
-                 sidebarText.forEach(text => text.classList.toggle('hidden'));
-                 if (logoContainer) {
-                     logoContainer.classList.toggle('hidden');
-                 }
-             });
-         })
-         .catch(error => {
-             console.error('Erro ao carregar o sidebar:', error);
-         });
+    // Carregar o conteúdo do sidebar.html no div do sidebarContainer e Tradutor
+    fetch('sidebar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('sidebarContainer').innerHTML = data;
+
+            // Configuração inicial da sidebar minimizada
+            const sidebar = document.getElementById('sidebar');
+            const sidebarText = document.querySelectorAll('.sidebar-text');
+            const logoContainer = document.querySelector('.logo-container');
+
+            sidebar.classList.add('w-20', 'sidebar-minimized');
+            sidebarText.forEach(text => text.classList.add('hidden'));
+            if (logoContainer) {
+                logoContainer.classList.add('hidden');
+            }
+
+            // Alternar sidebar minimizada
+            document.getElementById('toggleSidebar').addEventListener('click', function () {
+                sidebar.classList.toggle('w-64'); // Expandido
+                sidebar.classList.toggle('w-20'); // Minimizado
+                sidebar.classList.toggle('sidebar-minimized');
+
+                sidebarText.forEach(text => text.classList.toggle('hidden'));
+                if (logoContainer) {
+                    logoContainer.classList.toggle('hidden');
+                }
+
+                // Ajustar o botão de idioma ao minimizar a sidebar
+                adjustLanguageButton();
+            });
+
+            // ⚠️ Configura os eventos do botão de idioma
+            setupLanguageSwitcher();
+            adjustLanguageButton(); // Aplicar ajuste inicial
+        })
+        .catch(error => console.error('Erro ao carregar o sidebar:', error));
+
+    // Configurar troca de idioma e tradução automática
+    function setupLanguageSwitcher() {
+        const languageButton = document.getElementById('languageButton');
+        const languageOptions = document.getElementById('languageOptions');
+        const languageButtons = document.querySelectorAll('.language-option');
+        const selectedLanguage = document.getElementById('selectedLanguage');
+
+        if (!languageButton || !languageOptions) {
+            console.error('Botão de idioma não encontrado!');
+            return;
+        }
+
+        // Alternar visibilidade do menu de idiomas
+        languageButton.addEventListener('click', function (event) {
+            event.stopPropagation(); // Impede que o clique feche imediatamente
+            languageOptions.classList.toggle('hidden');
+        });
+
+        // Fecha o menu ao clicar fora
+        document.addEventListener('click', function (event) {
+            if (!languageButton.contains(event.target) && !languageOptions.contains(event.target)) {
+                languageOptions.classList.add('hidden');
+            }
+        });
+
+        // Troca de idioma e salva no localStorage
+        languageButtons.forEach(button => {
+            button.addEventListener('click', async function () {
+                const selectedLang = button.dataset.lang;
+                selectedLanguage.textContent = selectedLang.toUpperCase();
+                document.documentElement.lang = selectedLang;
+                localStorage.setItem('selectedLanguage', selectedLang);
+                languageOptions.classList.add('hidden'); // Fecha o menu após a escolha
+
+                // ⚠️ Se for "PT", restauramos os textos originais
+                if (selectedLang === 'pt') {
+                    restoreOriginalText();
+                } else {
+                    await translatePage(selectedLang);
+                }
+            });
+        });
+
+        // Define o idioma salvo ao carregar e traduz a página
+        const savedLang = localStorage.getItem('selectedLanguage') || 'pt';
+        selectedLanguage.textContent = savedLang.toUpperCase();
+        document.documentElement.lang = savedLang;
+        if (savedLang !== 'pt') {
+            translatePage(savedLang);
+        }
+    }
+
+    // ⚠️ Função para traduzir a página usando a API MyMemory
+    async function translatePage(targetLang) {
+        const TRANSLATION_API_URL = 'https://api.mymemory.translated.net/get';
+        const elementsToTranslate = document.querySelectorAll('[data-translate]');
+
+        for (let element of elementsToTranslate) {
+            const originalText = element.dataset.originalText || element.innerText;
+            element.dataset.originalText = originalText; // Salva o texto original
+
+            try {
+                const response = await fetch(`${TRANSLATION_API_URL}?q=${encodeURIComponent(originalText)}&langpair=pt|${targetLang}&de=diogobittenc@gmail.com`);
+                const data = await response.json();
+                if (data.responseData && data.responseData.translatedText) {
+                    element.innerText = data.responseData.translatedText;
+                }
+            } catch (error) {
+                console.error('Erro ao traduzir:', error);
+            }
+        }
+    }
+
+    // ⚠️ Função para restaurar os textos originais
+    function restoreOriginalText() {
+        const elementsToTranslate = document.querySelectorAll('[data-translate]');
+        elementsToTranslate.forEach(element => {
+            if (element.dataset.originalText) {
+                element.innerText = element.dataset.originalText; // Restaura o original
+            }
+        });
+    }
+
+    // ⚠️ Ajustar o botão de idioma ao minimizar a sidebar
+    function adjustLanguageButton() {
+        const sidebar = document.getElementById('sidebar');
+        const languageText = document.querySelectorAll('.language-text');
+
+        if (sidebar.classList.contains('sidebar-minimized')) {
+            languageText.forEach(text => text.classList.add('hidden'));
+        } else {
+            languageText.forEach(text => text.classList.remove('hidden'));
+        }
+    }
 
            // Chatbot
            const chatbotButton = document.getElementById('chatbotButton');
