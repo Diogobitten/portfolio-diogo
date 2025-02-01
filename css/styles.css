@@ -109,22 +109,7 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
-.faq-button {
-    border-color: #2563eb;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: end;
-  }
-  
-  .faq-button:hover {
-    background-color: #2563eb;
-  }
-
-  #chatMessages {
+#chatMessages {
     max-height: 300px;
     overflow-y: auto;
     scrollbar-width: thin; /* Para navegadores Firefox */
@@ -145,4 +130,24 @@ body::-webkit-scrollbar {
     background-color: #1F2937; /* Cor do fundo da barra */
 }
 
-  
+.typing-dots span {
+    animation: blink 1.4s infinite steps(3, start);
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.dot-1 { animation: blink 1.4s infinite; animation-delay: 0s; }
+.dot-2 { animation: blink 1.4s infinite; animation-delay: 0.2s; }
+.dot-3 { animation: blink 1.4s infinite; animation-delay: 0.4s; }

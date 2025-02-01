@@ -69,22 +69,25 @@
                     </div>
                 </section>
 
-               <!-- Botão e janela do chatbot -->
-               <div id="chatbotContainer" class="fixed bottom-10 right-4 flex flex-col items-end z-50">
-                <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2">
+                 <!-- Botão e janela do chatbot -->
+              <div id="chatbotContainer" class="fixed bottom-10 right-4 flex flex-col items-end z-50">
+                <div id="chatTooltip" class="hidden bg-gray-700 text-white text-sm px-3 py-2 rounded-lg shadow-lg mb-2" data-translate>
                     Olá! Veja por que você deve contratar o Diogo 😄
                 </div>
                 <div id="chatWindow" class="hidden bg-gray-800 p-4 rounded-lg shadow-lg w-80 h-auto flex flex-col">
                     <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
-                        <h2 class="text-lg font-semibold text-white">Chatbot do Diogo</h2>
+                        <h2 class="text-lg font-semibold text-white" data-translate>Diobot IA</h2>
                         <button id="closeChat" class="text-gray-400 hover:text-red-500">&times;</button>
                     </div>
-                    <div id="chatMessages" class="flex-1 overflow-y-auto space-y-4 p-2 bg-gray-700 rounded-lg" style="max-height: 300px;">
+                    <div id="chatMessages" class="flex flex-col space-y-2 p-2 bg-gray-700 rounded-lg max-h-80 overflow-y-auto" style="max-height: 300px;">
                         <!-- As mensagens serão adicionadas aqui dinamicamente -->
                     </div>
                     <div class="flex items-center space-x-2 mt-2">
-                        <input id="chatInput" type="text" placeholder="Digite sua pergunta..." class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg outline-none">
-                        <button id="sendButton" class="bg-blue-600 px-4 py-2 rounded-lg text-white">Enviar</button>
+                        <!-- 🔥 Mudamos para <textarea> e adicionamos Tailwind para responsividade -->
+                        <textarea id="chatInput" rows="1" placeholder="Digite sua pergunta..." 
+                            class="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg outline-none resize-none overflow-hidden leading-tight min-h-[40px] max-h-[150px]"
+                            style="height: 40px;"></textarea>
+                        <button id="sendButton" class="bg-blue-600 px-4 py-2 rounded-lg text-white hover:bg-blue-700" data-translate>Enviar</button>
                     </div>
                 </div>
                 <button id="chatbotButton" class="bg-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700">
