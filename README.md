@@ -21,12 +21,16 @@ Este é o projeto do meu portfólio pessoal, onde apresento meus principais trab
 - **JavaScript**  
 - **Font Awesome** (para ícones)  
 - **Chatbot com IA** (integrado com a API da OpenAI) - [Veja o repositório do Chatbot aqui](https://github.com/Diogobitten/chatbot)  
-- **APIs Externas:** OpenWeather, AwesomeAPI, GitHub API  
+- **APIs Externas:** 
+  - **OpenWeather** (para informações climáticas)  
+  - **AwesomeAPI** (para cotações de câmbio)  
+  - **GitHub API** (para exibição de repositórios)  
+  - **OpenAI API** (para integração de IA no chatbot)  
+  - **MyMemory API** (para tradução de idiomas)  
 - **Python** (para o backend do chatbot)  
 - **Flask** (framework utilizado no backend)  
 - **Vercel** (para hospedagem do frontend)  
 - **Render** (para hospedagem do backend)  
-
 
 
 ## Como Esconder a Chave de API
