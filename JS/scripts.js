@@ -277,7 +277,7 @@ function adjustLanguageButton() {
 
      // Configurar a API de clima
      function fetchWeather() {
-        const city = 'Rio de Janeiro';
+        const city = 'Rio';
         const API_URL = `/api/weather?city=${encodeURIComponent(city)}`;
       
         fetch(API_URL)
