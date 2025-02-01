@@ -254,8 +254,16 @@ function adjustLanguageButton() {
         chatWindow.classList.toggle("hidden");
         if (!chatWindow.classList.contains("hidden")) {
             chatMessages.innerHTML = "";
+    
+            // Exibir a primeira mensagem imediatamente
+            setTimeout(() => {
             displayMessage("👋 Olá! Eu sou o Diobot.😊 Com poderes cósmicos e fenomenais!🎇🌌 mas dentro de um chatzin🤏🪔", false);
-            displayMessage("Pergunte sobre seus projetos, habilidades, experiências profissionais ou até mesmo peça o currículo", false);
+            }, 500); // 1000 ms = 1 segundo    
+
+            // Exibir a segunda mensagem após 1 segundo
+            setTimeout(() => {
+                displayMessage("Pergunte sobre seus projetos, habilidades, experiências profissionais ou até mesmo peça o currículo", false);
+            }, 1500); // 1000 ms = 1 segundo
         }
     });
 
