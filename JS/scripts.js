@@ -254,7 +254,8 @@ function adjustLanguageButton() {
         chatWindow.classList.toggle("hidden");
         if (!chatWindow.classList.contains("hidden")) {
             chatMessages.innerHTML = "";
-            displayMessage("👋 Olá! Eu sou o Diobot.😊 Digite sua pergunta abaixo!", false);
+            displayMessage("👋 Olá! Eu sou o Diobot.😊 Com poderes cósmicos e fenomenais!🎇🌌 mas dentro de um chatzin🤏🪔", false);
+            displayMessage("Pergunte sobre seus projetos, habilidades, experiências profissionais ou até mesmo peça o currículo", false);
         }
     });
 
