@@ -14,14 +14,20 @@ Este é o projeto do meu portfólio pessoal, onde apresento meus principais trab
   - **Clima**: Consulta a API do OpenWeather para mostrar a temperatura atual do Rio de Janeiro.
   - **Cotação de Moedas**: Consulta a API da AwesomeAPI para exibir a cotação atual do USD e EUR em relação ao Real (BRL).
 
-## Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
-- **HTML5**
-- **CSS3** (com TailwindCSS)
-- **JavaScript**
-- **Font Awesome** (para ícones)
-- **Chatbot**
-- **APIs Externas**: OpenWeather, AwesomeAPI, GitHub API
+- **HTML5**  
+- **CSS3** (com TailwindCSS)  
+- **JavaScript**  
+- **Font Awesome** (para ícones)  
+- **Chatbot com IA** (integrado com a API da OpenAI) - [Veja o repositório do Chatbot aqui](https://github.com/Diogobitten/chatbot)  
+- **APIs Externas:** OpenWeather, AwesomeAPI, GitHub API  
+- **Python** (para o backend do chatbot)  
+- **Flask** (framework utilizado no backend)  
+- **Vercel** (para hospedagem do frontend)  
+- **Render** (para hospedagem do backend)  
+
+
 
 ## Como Esconder a Chave de API
 
