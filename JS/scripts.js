@@ -286,7 +286,7 @@ function adjustLanguageButton() {
 
      // Configurar a API de clima
      function fetchWeather() {
-        const city = 'Rio';
+        const city = 'Rio de Janeiro';
         const API_URL = `/api/weather?city=${encodeURIComponent(city)}`;
       
         fetch(API_URL)
@@ -301,7 +301,7 @@ function adjustLanguageButton() {
               document.getElementById('weatherIcon').classList.remove('hidden');
               document.getElementById('temperature').textContent = `${temperature}°C`;
               document.getElementById('temperature').classList.remove('hidden');
-              document.getElementById('location').textContent = `${city},`;
+              document.getElementById('location').textContent = `Rio,`;
               document.getElementById('location').classList.remove('hidden');
             } else {
               console.error('Erro ao buscar dados do clima:', data.message);
