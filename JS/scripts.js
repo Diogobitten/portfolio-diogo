@@ -344,7 +344,7 @@ function adjustLanguageButton() {
  
      // Lista de repositórios vetados
      const vetado = ['Diogobitten', 'readme-jokes', 'snk', 'rafaballerini', 'ABSphreak'];
-     const top3 = ['pong-invaders', 'linkin-park-project', 'fintech-java-app'];
+     const top3 = ['disub-translator', 'linkin-park-project', 'fintech-java-app'];
  
      // Extrair URLs de imagens ou vídeos do README
      function extractMediaLinks(owner, repo, readmeContent) {
